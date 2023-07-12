@@ -1,4 +1,4 @@
-import TabsComponent from '@/components/tabs/TabsComponent';
+import TabsComponent from '@components/dashboard/tabs/TabsComponent';
 import React from 'react';
 
 const TabsPage = () => {

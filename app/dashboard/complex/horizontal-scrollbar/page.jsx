@@ -1,6 +1,6 @@
 "use client";
 
-import HorizontalScrollbar from "@/components/horizontal-scrollbar/HorizontalScrollbar";
+import HorizontalScrollbar from "@components/dashboard/horizontal-scrollbar/HorizontalScrollbar";
 import React from "react";
 
 const categories = [
