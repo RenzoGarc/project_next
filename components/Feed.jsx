@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 
 import PromptCard from "./PromptCard";
 
+import { Button, Input } from "@material-tailwind/react";
+
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 prompt_layout'>
+    <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -17,6 +19,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
     </div>
   );
 };
+
 
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
@@ -69,7 +72,23 @@ const Feed = () => {
 
   return (
     <section className='feed'>
-      <form className='relative w-full flex-center'>
+      <div className="relative flex w-full gap-2">
+        <Input
+          type="search"
+          value={searchText}
+          onChange={handleSearchChange}
+          required
+          label="Search for a tag or a username"
+          className="pr-20"
+          containerProps={{
+            className: "min-w-[288px]",
+          }}
+        />
+        <Button size="sm" className="!absolute right-1 top-1 rounded">
+          Buscar
+        </Button>
+      </div>
+      {/* <form className='relative w-full flex-center'>
         <input
           type='text'
           placeholder='Search for a tag or a username'
@@ -78,18 +97,19 @@ const Feed = () => {
           required
           className='search_input peer'
         />
-      </form>
+      </form> */}
 
       {/* All Prompts */}
       {searchText ? (
         <PromptCardList
           data={searchedResults}
           handleTagClick={handleTagClick}
-        />
+        />        
       ) : (
         <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
       )}
     </section>
+    
   );
 };
 
