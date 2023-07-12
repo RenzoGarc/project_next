@@ -55,7 +55,7 @@ const MainSidebar = () => {
                   </li>
                </ul>
             </li>
-            <li className="flex flex-col justify-start items-start hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+            {/* <li className="flex flex-col justify-start items-start hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
                <div className="w-full flex flex-row justify-start items-center">
                   <FaCheckDouble className="mr-2" />
                   <h3 className="flex-1">Complex</h3>
@@ -81,7 +81,7 @@ const MainSidebar = () => {
                      </Link>
                   </li>
                </ul>
-            </li>
+            </li> */}
             <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
                <SiHelpscout className="mr-2" />
                <Link href="/dashboard/about-us" onClick={closeSeideBarHandler}>
