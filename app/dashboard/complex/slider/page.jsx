@@ -8,7 +8,7 @@ const SliderPage = () => {
       <br />
 
       {/* Slider Component */}
-      <CustomSlider1 />
+      {/* <CustomSlider1 /> */}
     </div>
   );
 };
