@@ -22,7 +22,7 @@ const LanguageSelectBox = () => {
                </span>
             </div>
             <div
-               className={`flex flex-col bg-orange-100 w-16 rounded-lg ${
+               className={`flex flex-col bg-white w-16 rounded-lg ${
                   open ? "opacity-100 h-auto" : "opacity-0 h-0"
                } transition-all duration-200 overflow-hidden absolute top-12 right-8`}
             >

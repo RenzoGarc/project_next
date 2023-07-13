@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
+import GoogleButton from '@components/global/GoogleButton';
 
 
 const Signin = () => {
@@ -19,7 +20,7 @@ const Signin = () => {
             <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:pr-0">
                 <div className='hidden lg:block'>
                     <button type="button" className='text-base text-Orangegow font-medium' onClick={openModal}>
-                        Log In
+                        Iniciar sesión
                     </button>
                 </div>
             </div>
@@ -61,7 +62,7 @@ const Signin = () => {
                                                     style={{ width: '84px', height: '84px' }}
                                                 />
                                                 <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                                                    Sign in to your account
+                                                    Inicia sesión
                                                 </h2>
                                             </div>
                                             <form className="mt-8 space-y-6" action="#" method="POST">
@@ -69,7 +70,7 @@ const Signin = () => {
                                                 <div className="-space-y-px rounded-md shadow-sm">
                                                     <div>
                                                         <label htmlFor="email-address" className="sr-only">
-                                                            Email address
+                                                            Correo electrónico
                                                         </label>
                                                         <input
                                                             id="email-address"
@@ -78,12 +79,12 @@ const Signin = () => {
                                                             autoComplete="email"
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                                            placeholder="Email address"
+                                                            placeholder="Correo electrónico"
                                                         />
                                                     </div>
-                                                    <div>
+                                                    <div className='space-y-4'>
                                                         <label htmlFor="password" className="sr-only">
-                                                            Password
+                                                            Contraseña
                                                         </label>
                                                         <input
                                                             id="password"
@@ -92,7 +93,7 @@ const Signin = () => {
                                                             autoComplete="current-password"
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-b-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                                            placeholder="Password"
+                                                            placeholder="Contraseña"
                                                         />
                                                     </div>
                                                 </div>
@@ -106,17 +107,16 @@ const Signin = () => {
                                                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                                         />
                                                         <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                                                            Remember me
+                                                            Recordarme
                                                         </label>
                                                     </div>
 
                                                     <div className="text-sm">
-                                                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                                                            Forgot your password?
+                                                        <a href="#" className="font-medium text-Orangegow hover:text-indigo-500">
+                                                            Recuperar contraseña
                                                         </a>
                                                     </div>
                                                 </div>
-
                                                 <div>
                                                     <button
                                                         type="submit"
@@ -125,21 +125,20 @@ const Signin = () => {
                                                         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                                             <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                                                         </span>
-                                                        Sign in
+                                                        Iniciar sesión
                                                     </button>
                                                 </div>
+                                                <GoogleButton title="Iniciar sesión con Google"></GoogleButton>
                                             </form>
                                         </div>
                                     </div>
-
-
                                     <div className="mt-4 flex justify-end">
                                         <button
                                             type="button"
                                             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                                             onClick={closeModal}
                                         >
-                                            Got it, thanks!
+                                            Aún no, gracias!
                                         </button>
                                     </div>
                                 </Dialog.Panel>

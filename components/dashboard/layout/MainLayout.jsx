@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => {
    const { open } = useContext(MenuContext);
 
    return (
-      <div className="bg-green-100 min-h-screen">
+      <div className="bg-white min-h-screen">
          <MainSidebar />
          {/* <Sidebar></Sidebar> */}
          <div className={`${open ? "max-lg:blur-xl" : "blur-0"}`}>
