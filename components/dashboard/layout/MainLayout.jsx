@@ -9,19 +9,19 @@ import MobileButtonNavigation from "./leyout-sections/MobileButtonNavigation";
 import Sidebar from "@components/Sidebar";
 
 const MainLayout = ({ children }) => {
-   const { open } = useContext(MenuContext);
+  const { open } = useContext(MenuContext);
 
-   return (
-      <div className="bg-white min-h-screen">
-         <MainSidebar />
-         {/* <Sidebar></Sidebar> */}
-         <div className={`${open ? "max-lg:blur-xl" : "blur-0"}`}>
-            <MainHeader />
-            <main className="lg:ml-[280px]">{children}</main>
-         </div>
-         <MobileButtonNavigation />
+  return (
+    <div className="bg-white min-h-screen">
+      <MainSidebar />
+      {/* <Sidebar></Sidebar> */}
+      <div className={`${open ? "max-lg:blur-xl" : "blur-0"}`}>
+        <MainHeader />
+        <main className="lg:ml-[280px]">{children}</main>
       </div>
-   );
+      <MobileButtonNavigation />
+    </div>
+  );
 };
 
 export default MainLayout;
