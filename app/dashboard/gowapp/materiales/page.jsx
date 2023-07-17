@@ -1,24 +1,12 @@
-"use client";
+import dynamic from "next/dynamic";
+import { getMaterial } from "@data/gow/materiales";
 
-import TableGow from "@components/dashboard/gowapp/TableGow";
-import { useEffect, useState } from "react";
+const TableGow = dynamic(
+  () => import("@components/dashboard/gowapp/TableGow"),
+  { ssr: false }
+);
 
-const MaterialPage = () => {
-  const [respuesta, setRespuesta] = useState([]);
-  useEffect(() => {
-    const consultarAPI = async () => {
-      const url = "https://fakestoreapi.com/products?sort=desc";
-      const response = await fetch(url);
-      const data = await response.json();
-      setRespuesta(data);
-    };
-    consultarAPI();
-  }, []);
-  return (
-    <>
-      <TableGow respuesta={respuesta}></TableGow>
-    </>
-  );
-};
-
-export default MaterialPage;
+export default async function MaterialPage() {
+  const response = await getMaterial();
+  return <TableGow respuesta={response.data}></TableGow>;
+}
