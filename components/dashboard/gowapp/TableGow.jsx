@@ -16,21 +16,27 @@ import {
   IconButton,
   Tooltip,
   Input,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
   Chip,
 } from "@material-tailwind/react";
-import { useState } from "react";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import CreateMaterialModal from "./CreateMaterial";
+import { useEffect, useState } from "react";
 
 const TABLE_HEAD = ["Giro", "Imágen", "Nombre", "Acciones"];
 
 export default function TableGow({ respuesta }) {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleOpenClose = () => setOpen(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setData(respuesta);
+  }, [respuesta]);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <Card className="h-full w-full">
@@ -55,50 +61,13 @@ export default function TableGow({ respuesta }) {
               className="flex items-center gap-3"
               color="blue"
               size="sm"
-              onClick={handleOpen}
+              onClick={handleOpenModal}
               variant="gradient"
             >
               <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Agregar
               Categoria
             </Button>
-            <Dialog
-              open={open}
-              handler={handleOpen}
-              animate={{
-                mount: { scale: 1, y: 0 },
-                unmount: { scale: 0.9, y: -100 },
-              }}
-              static
-              onClose={() => null}
-            >
-              <div className="flex items-center justify-between">
-                <DialogHeader>Creando categoria</DialogHeader>
-                <XMarkIcon className="mr-3 h-5 w-5" onClick={handleOpenClose} />
-              </div>
-              <DialogBody divider>
-                <div className="grid gap-6">
-                  <Input label="Ingrese el nombre de la categoria" />
-                  <Input label="Ingrese la URL de la imágen" />
-                </div>
-              </DialogBody>
-              <DialogFooter>
-                <Button
-                  color="red"
-                  variant="text"
-                  onClick={handleOpenClose}
-                  className="mr-1"
-                >
-                  <span>Cancelar</span>
-                </Button>
-                <Button
-                  variant="gradient"
-                  color="green"
-                  onClick={handleOpenClose}
-                >
-                  <span>Guardar</span>
-                </Button>
-              </DialogFooter>
-            </Dialog>
+            {modalOpen && <CreateMaterialModal onClose={handleCloseModal} />}
           </div>
         </div>
       </CardHeader>

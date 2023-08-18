@@ -35,6 +35,34 @@ const MainSidebar = () => {
             Dashboard
           </Link>
         </li>
+        <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+          <AiOutlineHome className="mr-2" />
+          <Link href="/dashboard/profile" onClick={closeSeideBarHandler}>
+            Perfil
+          </Link>
+        </li>
+        <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+          <AiOutlineHome className="mr-2" />
+          <Link href="/dashboard/student" onClick={closeSeideBarHandler}>
+            Estudiantes
+          </Link>
+        </li>
+        <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+          <AiOutlineHome className="mr-2" />
+          <Link href="/dashboard/teacher" onClick={closeSeideBarHandler}>
+            Docentes
+          </Link>
+        </li>
+        <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+          <AiOutlineHome className="mr-2" />
+          <Link href="/dashboard/categories" onClick={closeSeideBarHandler}>
+            Categorias
+          </Link>
+        </li>
+        <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+          <AiOutlineHome className="mr-2" />
+          <Link href="/dashboard/reports">Reportes</Link>
+        </li>
         <li className="flex flex-col justify-start items-start hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
           <div className="w-full flex flex-row justify-start items-center">
             <FaCheck className="mr-2" />
