@@ -29,7 +29,7 @@ export default function LandingPage() {
       <Companies />
       <Courses />
       <Mentor />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Newsletter />
     </div>
   );

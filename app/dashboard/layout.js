@@ -2,6 +2,7 @@ import MainLayout from "@/components/dashboard/layout/MainLayout";
 import "@styles/globals.css";
 import MenuContextProvider from "@/context/MenuContext";
 import { Providers } from "./providers";
+
 export const metadata = {
   title: "Dashboard",
   description: "",
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
             <Providers
               themeProps={{ attribute: "class", defaultTheme: "dark" }}
             >
-              <main className="container mx-auto max-w-7xl pt-2 px-6 flex-grow">
+              <main className="container mx-auto max-w-7xl pt-2 px-6">
                 {children}
               </main>
             </Providers>
