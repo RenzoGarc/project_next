@@ -4,11 +4,14 @@ const prisma = new PrismaClient();
 
 export async function GET(request, { params }) {
   try {
-    const data = await prisma.tpub_categoria.findUnique({
-      where: {
-        id_cat: parseInt(params.id),
-      },
-    });
+    // const data = await prisma.tpub_categoria.findUnique({
+    //   where: {
+    //     id_cat: parseInt(params.id),
+    //   },
+    // });
+
+    const data =
+      await prisma.$queryRaw`SELECT * FROM tpub_categoria WHERE id_cat = 1`;
     const jsonResponse = JSON.stringify(data);
     return new Response(jsonResponse, {
       status: 200,

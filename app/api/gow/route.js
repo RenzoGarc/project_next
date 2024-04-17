@@ -4,9 +4,11 @@ const prisma = new PrismaClient();
 export const GET = async (request) => {
   try {
     // CON MODELOS
-    const users = await prisma.tpub_categoria.findMany();
+    // const users = await prisma.tpub_categoria.findMany();
+
+    // console.log(users);
     // CONQUERY
-    // const users = await prisma.$queryRaw`SELECT * FROM tpub_categoria`;
+    const users = await prisma.$queryRaw`SELECT * FROM tpub_categoria`;
     const jsonResponse = JSON.stringify(users);
 
     return new Response(jsonResponse, {
@@ -14,6 +16,7 @@ export const GET = async (request) => {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
+    console.log(error);
     return new Response("Failed to fetch all prompts", { status: 500 });
   }
 };
